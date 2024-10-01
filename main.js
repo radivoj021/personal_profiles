@@ -1,5 +1,1 @@
-let checkInputs = function(){
-    let unesiteIme = document.getElementById("unesiteIme");
-
-    console.log(unesiteIme.value);
-}
+//ne funkcionise funkcija ugradjena u button login, verovatno zbog toga sto se pre toga izvrsava na serveru

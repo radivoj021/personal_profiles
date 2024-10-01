@@ -39,5 +39,5 @@ body{
 .noTextInfo{
     float: right;
     color: red;
-    visibility: hidden;
+    visibility: visible;
 }
