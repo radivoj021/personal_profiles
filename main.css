@@ -1,0 +1,43 @@
+#title{
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    width: 30%;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+
+}
+
+body{
+    background-color: #01A9DB;
+}
+
+.box1{
+    background-color: #FAFAFA;
+    padding: 10px;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.inputStyle{
+    width: 100%;
+}
+
+.btnStyle{
+    width: 100%;
+    border: none;
+    background-color: #2E64FE;
+    color: white;
+    padding: 5px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.noTextInfo{
+    float: right;
+    color: red;
+    visibility: hidden;
+}
