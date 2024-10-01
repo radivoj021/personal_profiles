@@ -14,10 +14,15 @@
 
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
+    $email = $_POST['email'];
     $username = $_POST['username'];
     $pwd = $_POST['password'];
 
-
+     //ako su input polja za login prazna, vraca nazad na login stranicu
+     if (empty($firstname) || empty($lastname) || empty($email)  || empty($username) || empty($pwd)) {
+        header("Location: index.html");
+        exit();
+    }
 
     $sql = "INSERT INTO users (firstname, lastname, username, pwd) VALUES ('$firstname', '$lastname', '$username', '$pwd')";
 

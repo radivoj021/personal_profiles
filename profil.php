@@ -43,8 +43,11 @@ if ($result->num_rows > 0) {
     echo "<hr>";
     echo "<a href='login.html'>go back</a>";
 } else {
-    echo "Korisnik sa datim ID-em ne postoji.";
+    header("Location: logIn.html");
+    exit();
 }
+
+
 
 // Zatvori upit i konekciju
 $stmt->close();

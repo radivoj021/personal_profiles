@@ -22,6 +22,13 @@
     $username = $_GET['username'];
     $pwd = $_GET['password'];
 
+
+    //ako su input polja za login prazna, vraca nazad na login stranicu
+    if (empty($username) || empty($pwd)) {
+        header("Location: logIn.html");
+        exit();
+    }
+
     $sql = "SELECT id FROM users WHERE username = ? AND pwd = ?";
 
     $stmt = $conn->prepare($sql);
@@ -41,9 +48,6 @@
         $id = $row['id'];
         header("Location: profil.php?id=" . $id);
         exit();
-    }
-    else{
-        header("Location: logIn.html");
     }
 ?>
 </body>
