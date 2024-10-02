@@ -39,5 +39,29 @@ body{
 .noTextInfo{
     float: right;
     color: red;
-    visibility: visible;
+    visibility: hidden;
+}
+
+#nameTitle{
+    color: rgb(14, 0, 95);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#container1{
+    background-color: rgb(224, 224, 224);
+    height: 800px;
+}
+
+#profilImage{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #BDBDBD;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+#profilImage:hover{
+    cursor: pointer;
 }
