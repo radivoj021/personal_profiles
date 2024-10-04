@@ -1,55 +1,82 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "phone_book";
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="main.css" type="text/css" rel="stylesheet">
+</head>
+<body id="bodyPro">
+    <div class="container" id="container1">
+        <div class="row">
+        <?php
 
-$conn = new mysqli($host, $username, $password, $database);
+            $host = "localhost";
+            $username = "root";
+            $password = "";
+            $database = "phone_book";
 
-if ($conn->connect_error) {
-    die("Greška pri učitavanju konekcije: " . $conn->connect_error);
-}
+            $conn = new mysqli($host, $username, $password, $database);
 
-$id = $_GET['id'];
+            if ($conn->connect_error) {
+                die("Greška pri učitavanju konekcije: " . $conn->connect_error);
+            }
 
-// Pripremi SQL upit sa placeholder-om za ime i prezime
-$sql = "SELECT firstname, lastname FROM users WHERE id = ?";
+            $id = $_GET['id'];
 
-// Pripremi upit
-$stmt = $conn->prepare($sql);
+            // Pripremi SQL upit sa placeholder-om za ime i prezime
+            $sql = "SELECT firstname, lastname FROM users WHERE id = ?";
 
-if ($stmt === false) {
-    die("Greška u pripremi upita: " . $conn->error);
-}
+            // Pripremi upit
+            $stmt = $conn->prepare($sql);
 
-// Vezi id kao parametar
-$stmt->bind_param("i", $id);
+            if ($stmt === false) {
+                die("Greška u pripremi upita: " . $conn->error);
+            }
 
-// Izvrši upit
-$stmt->execute();
+            // Vezi id kao parametar
+            $stmt->bind_param("i", $id);
 
-// Dobij rezultate
-$result = $stmt->get_result();
+            // Izvrši upit
+            $stmt->execute();
 
-// Proveri da li je dobijen rezultat
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $firstname = $row['firstname'];
-    $lastname = $row['lastname'];
-    echo "<h1>";
-    echo $firstname . " " . $lastname;
-    echo "</h1>";
-    echo "<hr>";
-    echo "<a href='login.html'>go back</a>";
-} else {
-    header("Location: logIn.html");
-    exit();
-}
+            // Dobij rezultate
+            $result = $stmt->get_result();
 
+            // Proveri da li je dobijen rezultat
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $firstname = $row['firstname'];
+                $lastname = $row['lastname'];
+                ?>
+        </div>
+        <div class="row">
+            <div class="col-3" id="leftColumn">
+                <div id="nameTitle"><?php echo $firstname . " " . $lastname;?></div>
+                <div id="profilImage"></div>
 
+                <div id="menu">
+                    <a href="">Phonebook</a><br><br>    
+                    <a href="">To Do list</a><br><br>
+                    <a href="">Diary</a><br><br>
+                    <a href="">Gallery</a><br><br>
+                </div>
+            </div>                        
+        </div>            
+                
+        <?php
+            } else {
+                header("Location: logIn.html");
+                exit();
+            }
+            // Zatvori upit i konekciju
+            $stmt->close();
+            $conn->close();
+        ?>
+    </div>
+    
 
-// Zatvori upit i konekciju
-$stmt->close();
-$conn->close();
-?>
+</body>
+</html>

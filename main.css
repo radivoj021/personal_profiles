@@ -10,7 +10,7 @@
 }
 
 body{
-    background-color: #01A9DB;
+    background-color:#2E9AFE
 }
 
 .box1{
@@ -39,5 +39,45 @@ body{
 .noTextInfo{
     float: right;
     color: red;
-    visibility: visible;
+    visibility: hidden;
+}
+
+#nameTitle{
+    color: rgb(14, 0, 95);
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#container1{
+    background-color: rgb(224, 224, 224);
+    height: 1000px;
+}
+
+#profilImage{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #BDBDBD;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+#profilImage:hover{
+    cursor: pointer;
+}
+
+#leftColumn{
+    background-color:#D8D8D8;
+    height: 1000px;
+}
+
+#menu{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+#menu a{
+    font-weight: bold;
+    text-decoration: none;
 }
