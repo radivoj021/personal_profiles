@@ -10,7 +10,11 @@
 }
 
 body{
+<<<<<<< HEAD
     background-color:#2E9AFE
+=======
+    background-color: #01A9DB;
+>>>>>>> 4c20a159ffbdc1e757b20d31a8f6afc8b22ef859
 }
 
 .box1{
@@ -44,14 +48,23 @@ body{
 
 #nameTitle{
     color: rgb(14, 0, 95);
+<<<<<<< HEAD
     font-size: 40px;
     font-weight: bold;
     text-align: center;
+=======
+    font-size: 50px;
+    font-weight: bold;
+>>>>>>> 4c20a159ffbdc1e757b20d31a8f6afc8b22ef859
 }
 
 #container1{
     background-color: rgb(224, 224, 224);
+<<<<<<< HEAD
     height: 1000px;
+=======
+    height: 800px;
+>>>>>>> 4c20a159ffbdc1e757b20d31a8f6afc8b22ef859
 }
 
 #profilImage{
@@ -65,6 +78,7 @@ body{
 
 #profilImage:hover{
     cursor: pointer;
+<<<<<<< HEAD
 }
 
 #leftColumn{
@@ -80,4 +94,6 @@ body{
 #menu a{
     font-weight: bold;
     text-decoration: none;
+=======
+>>>>>>> 4c20a159ffbdc1e757b20d31a8f6afc8b22ef859
 }

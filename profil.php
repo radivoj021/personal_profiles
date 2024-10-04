@@ -53,6 +53,7 @@
                 ?>
         </div>
         <div class="row">
+<<<<<<< HEAD
             <div class="col-3" id="leftColumn">
                 <div id="nameTitle"><?php echo $firstname . " " . $lastname;?></div>
                 <div id="profilImage"></div>
@@ -64,6 +65,10 @@
                     <a href="">Gallery</a><br><br>
                 </div>
             </div>                        
+=======
+            <div id="nameTitle"><?php echo $firstname . " " . $lastname;?></div>
+            <div id="profilImage"></div>            
+>>>>>>> 4c20a159ffbdc1e757b20d31a8f6afc8b22ef859
         </div>            
                 
         <?php
