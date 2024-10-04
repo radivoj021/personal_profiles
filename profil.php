@@ -53,22 +53,27 @@
                 ?>
         </div>
         <div class="row">
-<<<<<<< HEAD
             <div class="col-3" id="leftColumn">
                 <div id="nameTitle"><?php echo $firstname . " " . $lastname;?></div>
                 <div id="profilImage"></div>
 
                 <div id="menu">
-                    <a href="">Phonebook</a><br><br>    
-                    <a href="">To Do list</a><br><br>
+                    <a id="phonebookLink" href="">Phonebook</a><br><br>    
+                    <a id="todoLink" href="">To Do list</a><br><br>
                     <a href="">Diary</a><br><br>
                     <a href="">Gallery</a><br><br>
                 </div>
-            </div>                        
-=======
-            <div id="nameTitle"><?php echo $firstname . " " . $lastname;?></div>
-            <div id="profilImage"></div>            
->>>>>>> 4c20a159ffbdc1e757b20d31a8f6afc8b22ef859
+
+
+            </div>
+            <div class="col-9">
+                <div id="phonebookDiv">
+                    phonebook
+                </div>
+                <div id="todoDiv">
+                    to do
+                </div> 
+            </div>                    
         </div>            
                 
         <?php
@@ -82,6 +87,6 @@
         ?>
     </div>
     
-
+    <script src="main.js"></script>
 </body>
 </html>
