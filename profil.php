@@ -7,6 +7,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="main.css" type="text/css" rel="stylesheet">
+    <link href="media.css" type="text/css" rel="stylesheet">
 </head>
 <body id="bodyPro">
     <div class="container" id="container1">
@@ -52,8 +53,9 @@
                 $lastname = $row['lastname'];
                 ?>
         </div>
+
         <div class="row">
-            <div class="col-3" id="leftColumn">
+            <div id="leftColumn">
                 <div id="nameTitle"><?php echo $firstname . " " . $lastname;?></div>
                 <div id="profilImage"></div>
 
@@ -62,11 +64,12 @@
                     <a id="todoLink" href="">To Do list</a><br><br>
                     <a href="">Diary</a><br><br>
                     <a href="">Gallery</a><br><br>
+                    <p id="logout">Log out</p>
                 </div>
-
-
             </div>
-            <div class="col-9">
+
+
+            <div>
                 <div id="phonebookDiv">
                     phonebook
                 </div>

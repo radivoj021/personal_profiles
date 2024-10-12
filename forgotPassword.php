@@ -6,24 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Poslat vam je kod za reset sifre.</h3>
-    <span>Unesite kod koji vam je poslat.</span>
+    <h3>Password recovery</h3>
+    <span>type username or password</span>
     <br>
     <br>
-    <input type="number" name="securityCode">
-    <br>
-    <br>
-    <button type="submit">submit</button>
+    <form method="POST" action="forgotPassword_2.php">
+        <input type="string" name="securityCode">
+        <br>
+        <br>
+        <button type="submit">submit</button> 
+    </form>
 
-    
 
-    <script>
-        let key = Math.random();
-        let securityKey = Math.floor((key + 1) * 1000);
-
-        console.log(securityKey);
-    </script>
-
-    
 </body>
 </html>
