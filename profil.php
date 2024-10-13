@@ -14,10 +14,7 @@
         <div class="row">
         <?php
 
-            $host = "localhost";
-            $username = "root";
-            $password = "";
-            $database = "phone_book";
+            include 'credentials.php';
 
             $conn = new mysqli($host, $username, $password, $database);
 
@@ -55,9 +52,9 @@
         </div>
 
         <div class="row">
-            <div id="leftColumn">
+            <div class="" id="leftColumn">
                 <div id="nameTitle"><?php echo $firstname . " " . $lastname;?></div>
-                <div id="profilImage"></div>
+                
 
                 <div id="menu">
                     <a id="phonebookLink" href="">Phonebook</a><br><br>    
@@ -67,8 +64,9 @@
                     <p id="logout">Log out</p>
                 </div>
             </div>
-
-
+        </div>      
+        
+        <div class="row">
             <div>
                 <div id="phonebookDiv">
                     phonebook

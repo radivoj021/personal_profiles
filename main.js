@@ -1,4 +1,4 @@
-document.getElementById("myForm").addEventListener("submit", function(event){
+/* document.getElementById("myForm").addEventListener("submit", function(event){
     event.preventDefault();
 
     let username = document.getElementById("username").value;
@@ -22,7 +22,7 @@ document.getElementById("myForm").addEventListener("submit", function(event){
         this.submit();
     }
 
-})
+}) */
 
 /* let checkInputs = function(event){
     
