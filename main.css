@@ -167,3 +167,12 @@ body{
 #signupForm button{
     background-color: lightblue;
 }
+
+#header{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: blue;
+    margin: 0 auto;
+    background-color: #FAFAFA;
+}

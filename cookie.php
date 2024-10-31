@@ -1,5 +1,26 @@
 <?php
 
-    $cookie_name = "username";
+$cookieName = "username";
+$cookieUsername = $username;
+$cookie_duration = time() + (86400 * 7); // Cookie traje 7 dana
+
+if (isset($username)) {
+    // Postavljanje cookie-ja sa imenom i rokom trajanja od 7 dana
+    setcookie($cookieName, $cookieUsername, $cookie_duration, "/"); 
+}
+
+$cookieName = "pwd";
+$cookiePwd = $pwd;
+$cookie_duration = time() + (86400 * 7); // Cookie traje 7 dana
+
+
+
+if (isset($pwd)) {
+    // Postavljanje cookie-ja sa imenom i rokom trajanja od 7 dana
+    setcookie($cookieName, $cookiePwd, $cookie_duration, "/"); 
+}
+
+echo $cookieUsername;
+echo $cookiePwd
 
 ?>

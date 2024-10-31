@@ -10,6 +10,14 @@
     <link href="media.css" type="text/css" rel="stylesheet">
 </head>
     <body>
+
+        <?php
+        
+            
+        $id = $_GET['id'];
+        
+        ?>
+
         <nav class="navbar bg-body-tertiary fixed-top" id="navbarMenuProfile">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"></a>
@@ -24,10 +32,10 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="homepage.php">HOME</a>
+                            <a class="nav-link active" aria-current="page" href="homepage.php?id=<?php echo $id?>">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="profil.php">My profile</a>
+                            <a class="nav-link active" aria-current="page" href="profil.php?id=<?php echo $id?>">My profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Inbox</a>
@@ -35,7 +43,7 @@
                         </li>
                         <hr>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="phonebook/phoneBookList.php">Phonebook</a>
+                            <a class="nav-link active" aria-current="page" href="phoneBookList.php?id=<?php echo $id?>">Phonebook</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">To Do list</a>
@@ -47,7 +55,7 @@
                             <a class="nav-link active" aria-current="page" href="#">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Log Out</a>
+                            <a class="nav-link active" aria-current="page" href="login.php">Log Out</a>
                         </li>
                     </ul>
                     </form>
