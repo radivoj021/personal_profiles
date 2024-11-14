@@ -13,60 +13,20 @@
 
 <?php
 
-include 'credentials.php';
+        
 
-$conn = new mysqli($host, $username, $password, $database);
+        if(isset($_COOKIE["username"])) {
+            echo "Korisničko ime iz cookie-ja: " . $_COOKIE["username"];
+        } else {
+            echo "Cookie nije postavljen.";
+        }
 
-// Provera konekcije
-if ($conn->connect_error) {
-    die("Greška pri učitavanju konekcije: " . $conn->connect_error);
-}
+        if(isset($_COOKIE["pwd"])) {
+            echo "Korisničko ime iz cookie-ja: " . $_COOKIE["pwd"];
+        } else {
+            echo "Cookie nije postavljen.";
+        }
 
-// Priprema SQL upita za provere korisnika
-$sql = "SELECT * FROM users WHERE username = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $username);
-$stmt->execute();
-$result = $stmt->get_result();
-
-// Proveri da li je korisnik pronađen
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-
-    // Proveri lozinku (uporedi sa hashed lozinkom u bazi)
-    if (password_verify($pwd, $row['pwd'])) {
-        // Postavi kolačiće ili sesije za korisnika
-        setcookie("username", $username, time() + (86400 * 30), "/"); // Kolačić na 30 dana
-        $_SESSION['username'] = $username; // Postavi sesiju za korisnika
-
-        // Preusmeri korisnika na njegov profil
-        header("Location: profile.php"); // Promeni putanju do svoje stranice
-        exit(); // Zaustavi dalje izvršavanje
-    } else {
-        echo "Neispravna lozinka.";
-    }
-} else {
-    echo "Korisnik nije pronađen.";
-}
-
-// Zatvori konekciju
-$stmt->close();
-$conn->close();
-
-
-
-
-if(isset($_COOKIE["username"])) {
-    echo "Korisničko ime iz cookie-ja: " . $_COOKIE["username"];
-} else {
-    echo "Cookie nije postavljen.";
-}
-
-if(isset($_COOKIE["pwd"])) {
-    echo "Korisničko ime iz cookie-ja: " . $_COOKIE["pwd"];
-} else {
-    echo "Cookie nije postavljen.";
-}
 
 
 ?>
