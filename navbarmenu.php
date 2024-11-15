@@ -55,7 +55,7 @@
                             <a class="nav-link active" aria-current="page" href="#">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="login.php">Log Out</a>
+                            <a class="nav-link active" aria-current="page" href="logout.php">Log Out</a>
                         </li>
                     </ul>
                     </form>

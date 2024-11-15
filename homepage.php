@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
+    
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
 </head>
 <body class="bodyGray">
         <?php
-
+            include 'cookieCheck.php';
             include 'navbarmenu.php';
 
             // Preuzimanje id parametra iz URL-a
