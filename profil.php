@@ -13,6 +13,11 @@
     <div class="container" id="container1">
         <div class="row">
         <?php
+
+        session_start();
+
+        /* echo $_SESSION['username'] . " " . $_SESSION['password'];  <--- works */
+
             include 'title.php';
             
             include 'credentials.php';

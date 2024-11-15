@@ -13,6 +13,7 @@
 </head>
 <body class="bodyGray">
         <?php
+
             include 'navbarmenu.php';
 
             // Preuzimanje id parametra iz URL-a
@@ -57,11 +58,24 @@
                 echo "Nema rezultata za dati ID.";
             }
 
+
             // Zatvori statement i konekciju
             $stmt->close();
             $conn->close();
 
-            include 'cookie.php';
+ /*            include 'cookie.php'; */
+
+            session_start();
+
+            $_SESSION['username'] = $username;
+            $_SESSION['password'] = $pwd;
+            $_SESSION['id'] = $id;
+            //works
+
+            setcookie('username', $_SESSION['username'], time() + (30 * 24 * 60 * 60), "/");
+            setcookie('password', $_SESSION['password'], time() + (30 * 24 * 60 * 60), "/");
+            setcookie('id', $_SESSION['id'], time() + (30 * 24 * 60 * 60), "/");            
+            //works
         ?>
 
 

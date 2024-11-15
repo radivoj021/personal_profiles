@@ -1,6 +1,6 @@
 <?php
 
-$cookieName = "username";
+/* $cookieName = "username";
 $cookieUsername = $username;
 $cookie_duration = time() + (86400 * 7); // Cookie traje 7 dana
 
@@ -21,6 +21,13 @@ if (isset($pwd)) {
 }
 
 echo $cookieUsername;
-echo $cookiePwd
+echo $cookiePwd */
 
+
+
+session_start();
+
+if(($_COOKIE['username'] == $_SESSION['username'] && $_COOKIE['password'] == $_SESSION['password'])){
+    header("Location: homepage.php?id=" . $_COOKIE['id']);
+}
 ?>

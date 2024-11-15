@@ -175,5 +175,14 @@ body{
     color: blue;
     margin: 0 auto;
     background-color: #FAFAFA;
-    margin-top: -24px;
+}
+
+#rememberMe{
+    background-color: red;
+    width: 30%;
+    color: green;
+    float: right;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 60px;
 }

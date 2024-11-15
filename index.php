@@ -12,7 +12,7 @@
 <body id="mainBody">
 
 <?php
-
+        include 'cookie.php';
         
 
         if(isset($_COOKIE["username"])) {
