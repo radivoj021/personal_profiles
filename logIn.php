@@ -14,6 +14,18 @@
     $username = $_GET['username'];
     $pwd = $_GET['password'];
 
+    session_start();
+
+    $_SESSION['username'] = $username;
+    $_SESSION['password'] = $pwd;
+    $_SESSION['id'] = $id;
+    //works
+
+    setcookie('username', $_SESSION['username'], time() + (30 * 24 * 60 * 60), "/");
+    setcookie('password', $_SESSION['password'], time() + (30 * 24 * 60 * 60), "/");
+    setcookie('id', $_SESSION['id'], time() + (30 * 24 * 60 * 60), "/");            
+    //works
+
 
     //ako su input polja za login prazna, vraca nazad na login stranicu
     if (empty($username) || empty($pwd)) {

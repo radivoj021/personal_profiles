@@ -1,9 +1,6 @@
 <?php
 
-    if(isset($_COOKIE['username'])){
-        echo "Cookie setovan";
-    }
-    else{
+    if(!isset($_COOKIE['username'])){
         header("Location: logIn.php");
     }
 
