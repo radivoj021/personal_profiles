@@ -13,19 +13,11 @@
 
     $username = $_GET['username'];
     $pwd = $_GET['password'];
-
-    session_start();
-
-    $_SESSION['username'] = $username;
-    $_SESSION['password'] = $pwd;
-    $_SESSION['id'] = $id;
+    $rememberCheck = $_GET['rememberCheck'];
+    
     //works
 
-    setcookie('username', $_SESSION['username'], time() + (30 * 24 * 60 * 60), "/");
-    setcookie('password', $_SESSION['password'], time() + (30 * 24 * 60 * 60), "/");
-    setcookie('id', $_SESSION['id'], time() + (30 * 24 * 60 * 60), "/");            
-    //works
-
+    
 
     //ako su input polja za login prazna, vraca nazad na login stranicu
     if (empty($username) || empty($pwd)) {
@@ -50,6 +42,20 @@
     if($result->num_rows > 0){
         $row = $result->fetch_assoc();
         $id = $row['id'];
+
+
+
+        session_start();
+
+        $_SESSION['username'] = $username;
+        $_SESSION['password'] = $pwd;
+        $_SESSION['id'] = $id;
+        //works
+    
+        setcookie('username', $_SESSION['username'], time() + (30 * 24 * 60 * 60), "/");
+        setcookie('password', $_SESSION['password'], time() + (30 * 24 * 60 * 60), "/");
+        setcookie('id', $_SESSION['id'], time() + (30 * 24 * 60 * 60), "/");
+
         header("Location: homepage.php?id=" . $id);
         exit();
     }

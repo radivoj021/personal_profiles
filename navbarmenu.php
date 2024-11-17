@@ -14,7 +14,7 @@
         <?php
         
             
-        $id = $_GET['id'];
+        $id = $_COOKIE['id'];
         
         ?>
 
@@ -55,7 +55,7 @@
                             <a class="nav-link active" aria-current="page" href="#">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="logout.php">Log Out</a>
+                            <a id="logOut" class="nav-link active" aria-current="page" href="logout.php">Log Out</a>
                         </li>
                     </ul>
                     </form>
@@ -63,5 +63,6 @@
                 </div>
             </div>
         </nav>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
     </body>
 </html>

@@ -67,12 +67,21 @@
     }
 
     #header{
+        text-align: left;
         margin-bottom: 10px;
         padding: 5px;
         -webkit-box-shadow: 3px 17px 14px -22px rgba(0,0,0,0.75);
--moz-box-shadow: 3px 17px 14px -22px rgba(0,0,0,0.75);
-box-shadow: 3px 17px 14px -22px rgba(0,0,0,0.75)
+        -moz-box-shadow: 3px 17px 14px -22px rgba(0,0,0,0.75);
+        box-shadow: 3px 17px 14px -22px rgba(0,0,0,0.75)
     }
+}
+
+.bg-body-tertiary{
+    height: 55px;
+}
+
+.navbar>.container-fluid{
+    margin-top: -8px;
 }
 
 @media (min-width: 576px) {

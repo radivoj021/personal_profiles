@@ -12,10 +12,11 @@
 <body id="mainBody">
 
 <?php
-        include 'cookie.php';
-        
 
-        if(isset($_COOKIE["username"])) {
+        session_start();
+        include 'cookie.php';
+
+      /*   if(isset($_COOKIE["username"])) {
             echo "Korisničko ime iz cookie-ja: " . $_COOKIE["username"];
         } else {
             echo "Cookie nije postavljen.";
@@ -26,7 +27,7 @@
         } else {
             echo "Cookie nije postavljen.";
         }
-
+ */
 
 
 ?>

@@ -13,7 +13,12 @@
 </head>
 <body class="bodyGray">
         <?php
+
+            session_start();
             include 'cookieCheck.php';
+           
+
+            /* include 'cookieCheck.php'; */
             include 'navbarmenu.php';
 
             // Preuzimanje id parametra iz URL-a
@@ -70,6 +75,19 @@
 
 
         <?php include 'title.php'; ?>
+    <div id="statusField">
+        <form action="">
+        <i class="fa-solid fa-message"></i>
+            <input type="text" id="addStatusText" placeholder="Add your status here...">
+            <script>
+                let status = document.getElementById('addStatusText');
+                status.addEventListener("click", function(){
+                    window.location.href = "statusPage.php";
+                })
+            </script>
+        </form>
+
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    
     <script src="main.js"></script>

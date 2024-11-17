@@ -186,3 +186,23 @@ body{
     margin-bottom: 30px;
     margin-left: 60px;
 }
+
+#logOut{
+    font-weight: bold;
+    color: rgb(196, 42, 42)
+}
+
+#statusField{
+    background-color: #FAFAFA;
+    width: 100%;
+    height: 200px;
+}
+
+#addStatusText{
+    width: 90%; 
+    margin: 0 auto;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+}

@@ -13,10 +13,10 @@
     <div class="container" id="container1">
         <div class="row">
         <?php
+            session_start();
+            include 'cookieCheck.php';
 
-        session_start();
-
-        /* echo $_SESSION['username'] . " " . $_SESSION['password'];  <--- works */
+            /* echo $_SESSION['username'] . " " . $_SESSION['password'];  <--- works */
 
             include 'title.php';
             

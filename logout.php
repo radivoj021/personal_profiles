@@ -11,5 +11,5 @@
 
         echo $_COOKIE['username'];
 
-        header("Location: logIn.html"); 
+        header("Location: login.html"); 
 ?>
