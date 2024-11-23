@@ -84,6 +84,7 @@
                 <?php
                     include 'title.php'; 
                     include 'navbarmenu.php';
+
                 ?>
                 <i class="fa-solid fa-gear homeIcons"></i>
                 <i id="searchIcon" class="fa-solid fa-magnifying-glass homeIcons"></i>
@@ -92,7 +93,7 @@
                     let searchIcon = document.getElementById("searchIcon");
 
                     searchIcon.addEventListener("click", function(){
-                        window.location.href = "search.php";
+                        window.location.href = "search.php?id=<?php echo $id ?>";
                     })
                 </script>
             </div>
@@ -104,7 +105,7 @@
                         
 
                         status.addEventListener("click", function(){
-                            window.location.href = "statusPage.php";
+                            window.location.href = "statusPage.php?id=<?php echo $id ?>";
                         })
 
 
@@ -114,14 +115,67 @@
             </div>
             
         </div>
-        <div class="row">
-            
+
+        <div class="row" id="statusRow">
+                <?php
+
+                    include 'credentials.php';
+
+                    $conn = new mysqli($host, $username, $password, $database);
+
+
+                    if($conn -> connect_error){
+                        die("Neuspesna konekcija " . $conn -> connect_error);
+                    }
+
+                    $sql = "SELECT * from status WHERE id=$id";
+                    $result = $conn->query($sql);
+
+                    if($result -> num_rows > 0){
+                        while($row = $result -> fetch_assoc()){
+
+                            echo "<div class='statusBox'>";
+                                echo "<div class='statusBoxName'>";
+                                echo $row['firstName'] . " " . $row['lastName'];
+                                echo "</div>";
+                                echo "<div class='statusBoxDate'>";
+                                echo $row['statusDate'];
+                                echo "</div>";
+                                echo "<div class='statusBoxText'>";
+                                echo $row['statusText'];
+                                echo "</div>";
+                            echo "</div>";
+
+
+
+                        /*  echo "<div class='statusBox'>";
+                            echo
+                            echo $row['firstName'] . " " . $row['lastName'] . " " . $row['statusText'];
+                            echo "</div>"; */
+                        }
+                    }              
+
+                    ?>
+
         </div>
 
         
-    </div>
 
-   
+        
+    </div>
+    
+    <!-- <div class='statusBox'>
+        <div class='statusBoxName'>
+
+        </div>
+        <div class='statusBoxDate'>
+
+        </div>
+        <div class='statusBoxText'>
+
+        </div>
+    </div>
+    -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    
     <script src="main.js"></script>
