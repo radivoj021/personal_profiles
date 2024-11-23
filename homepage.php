@@ -10,6 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="main.css" rel="stylesheet" type="text/css">
     <link href="media.css" type="text/css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+
 </head>
 <body class="bodyGray">
         <?php
@@ -19,7 +22,7 @@
            
 
             /* include 'cookieCheck.php'; */
-            include 'navbarmenu.php';
+            
 
             // Preuzimanje id parametra iz URL-a
             $id = $_GET['id'];
@@ -74,20 +77,51 @@
         ?>
 
 
-        <?php include 'title.php'; ?>
-    <div id="statusField">
-        <form action="">
-        <i class="fa-solid fa-message"></i>
-            <input type="text" id="addStatusText" placeholder="Add your status here...">
-            <script>
-                let status = document.getElementById('addStatusText');
-                status.addEventListener("click", function(){
-                    window.location.href = "statusPage.php";
-                })
-            </script>
-        </form>
+        
+    <div class="container" id="statusField">
+        <div class=row>
+            <div>
+                <?php
+                    include 'title.php'; 
+                    include 'navbarmenu.php';
+                ?>
+                <i class="fa-solid fa-gear homeIcons"></i>
+                <i id="searchIcon" class="fa-solid fa-magnifying-glass homeIcons"></i>
+                <i class="fa-solid fa-message homeIcons"></i>
+                <script>
+                    let searchIcon = document.getElementById("searchIcon");
 
+                    searchIcon.addEventListener("click", function(){
+                        window.location.href = "search.php";
+                    })
+                </script>
+            </div>
+            <div>    
+                <form action="">
+                    <input type="text" id="addStatusText" placeholder="Add your status here...">
+                    <script>
+                        let status = document.getElementById('addStatusText');
+                        
+
+                        status.addEventListener("click", function(){
+                            window.location.href = "statusPage.php";
+                        })
+
+
+                    </script>
+                </form>
+
+            </div>
+            
+        </div>
+        <div class="row">
+            
+        </div>
+
+        
     </div>
+
+   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    
     <script src="main.js"></script>

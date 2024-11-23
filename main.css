@@ -8,8 +8,8 @@
 
 }
 
-body{
-    background-color:#2E9AFE
+.bodyGray{
+    background-color: gray;
 }
 
 .box1{
@@ -169,12 +169,15 @@ body{
 }
 
 #header{
+    width: 40%;
+    float: left;
+/*     margin-left: 20px; */
     text-align: center;
     font-weight: bold;
     font-size: 30px;
     color: blue;
     margin: 0 auto;
-    background-color: #FAFAFA;
+    background-color: red;
 }
 
 #rememberMe{
@@ -185,6 +188,7 @@ body{
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: 60px;
+    width: 50%;
 }
 
 #logOut{
@@ -205,4 +209,24 @@ body{
     border-radius: 10px;
     margin-left: 20px;
     margin-top: 10px;
+}
+
+.homeIcons{
+    color: blue;
+    float: right;
+    margin-top: 22px;
+    float: left;
+    width: 20px;
+    background-color: #FAFAFA;
+    margin-right: 25px;
+}
+
+#bodyOfThePage{
+    background-color:#FAFAFA;
+}
+
+.back{
+    font-weight: bold;
+    font-size: 20px;
+    color: blue;
 }

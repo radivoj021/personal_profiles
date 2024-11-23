@@ -62,17 +62,23 @@
         border: none;
     }
 
+    .navbar>.container-fluid{
+        margin-right: -15px;
+    }
+
     .container{
         width: 100%;
     }
 
     #header{
+        width: 40%;
+        background-color: #FAFAFA;
+        float: left;
+        margin-left: 20px;
         text-align: left;
         margin-bottom: 10px;
         padding: 5px;
-        -webkit-box-shadow: 3px 17px 14px -22px rgba(0,0,0,0.75);
-        -moz-box-shadow: 3px 17px 14px -22px rgba(0,0,0,0.75);
-        box-shadow: 3px 17px 14px -22px rgba(0,0,0,0.75)
+        font-size: 25px;
     }
 }
 
@@ -82,6 +88,42 @@
 
 .navbar>.container-fluid{
     margin-top: -8px;
+    background-color: #FAFAFA;
+}
+
+.container{
+    width: 100%;
+}
+
+.homeIcons{
+    color: blue;
+    float: right;
+    margin-top: 18px;
+    float: left;
+    width: 20px;
+    background-color: #FAFAFA;
+    margin-right: 22px;
+}
+    
+.bg-body-tertiar{
+    width: 10%;
+}
+
+.back{
+    width: 10%;
+    float: left;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+#search{
+    width: 85%;
+    float: right;
+    height: 40px;
+    background-color: lightgray;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 @media (min-width: 576px) {
