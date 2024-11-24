@@ -2,9 +2,17 @@
 session_start();
 
 // Preuzimanje podataka iz sesije
+$_SESSION['firstname'];
+$_SESSION['lastname'];
+$_SESSION['id'];
+
+setcookie('firstname', $_SESSION['firstname'], time() + (30 * 24 * 60 * 60), "/");
+setcookie('lastname', $_SESSION['lastname'], time() + (30 * 24 * 60 * 60), "/");
+
 $fname = $_SESSION['firstname'];
 $lname = $_SESSION['lastname'];
-$date = date("j F Y");
+$date = date("l jS \of F Y h:i:s A");
+
 
 // Provera da li su podaci iz sesije i POST-a dostupni
 if (isset($_SESSION["id"]) && isset($_POST['statusText'])) {

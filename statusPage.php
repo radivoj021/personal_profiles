@@ -12,7 +12,8 @@
 </head>
 <body>
     <?php
-
+        session_start();
+        echo $_SESSION['username'];
 
         include "cookieCheck.php";
         $id = $_GET['id'];
@@ -30,7 +31,7 @@
         <br>
         <form action="insertStatus.php" method="POST">
             <textarea type="text" id="status" name="statusText"></textarea>
-            <input type="hidden" name="id" value="<?php session_start(); echo $_SESSION['id']; ?>">
+            <input type="hidden" name="id" value="<?php echo $_COOKIE['id']; ?>">
             <br>
             <br>
             <button id="updateStatusButton">Update Status</button>

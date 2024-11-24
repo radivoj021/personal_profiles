@@ -59,8 +59,8 @@
 
                 $_SESSION["firstname"] = $firstname;
                 $_SESSION["lastname"] = $lastname;
-                /* setcookie("firstname", $firstname, time() + (30 * 24 * 60 * 60), "/");
-                setcookie("lastname", $lastname, time() + (30 * 24 * 60 * 60), "/"); */
+                setcookie("firstname", $firstname, time() + (30 * 24 * 60 * 60), "/");
+                setcookie("lastname", $lastname, time() + (30 * 24 * 60 * 60), "/");
                 ?>
         </div>
 

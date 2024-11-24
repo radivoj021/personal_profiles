@@ -181,13 +181,12 @@
 }
 
 #rememberMe{
-    background-color: red;
     width: 30%;
     color: green;
-    float: right;
-    margin-top: 30px;
+    float: left;
+    margin-top: 2px;
+    margin-right: 50px;
     margin-bottom: 30px;
-    margin-left: 60px;
     width: 50%;
 }
 

@@ -19,7 +19,12 @@
 
             session_start();
             include 'cookieCheck.php';
-           
+
+            if (!isset($_SESSION['firstname'])) {
+                echo "Sesija 'firstname' nije postavljena.";
+            }
+
+            
 
             /* include 'cookieCheck.php'; */
             
@@ -128,7 +133,7 @@
                         die("Neuspesna konekcija " . $conn -> connect_error);
                     }
 
-                    $sql = "SELECT * from status WHERE id=$id";
+                    $sql = "SELECT * FROM status WHERE id=$id ORDER BY statusId DESC";
                     $result = $conn->query($sql);
 
                     if($result -> num_rows > 0){
