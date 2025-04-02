@@ -1,3 +1,7 @@
+<?php
+    ob_start();
+    include 'cookieCheck.php';    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +15,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bodyGray">
-    <?php
-    
-    include 'cookieCheck.php';
-    
-    ?>
     <div class="container">
         <div class="row">
 
@@ -36,6 +35,42 @@
                     <input id="search" type="text" placeholder="search..."> 
                 </form>
             </div>
+
+            <?php
+                include 'credentials.php';
+
+                $conn = new mysqli($host, $username, $password, $database);
+
+                if($conn -> connect_error){
+                    die("Neuspesna konekcija " . $conn -> connect_error);
+                }
+
+                $sql = "SELECT * FROM users";
+                $result = $conn->query($sql);
+
+
+
+                if($_COOKIE['firstname'] && $_COOKIE['lastname']){
+                    if($result -> num_rows > 0){
+                        while($row = $result -> fetch_assoc()){
+                            $guestId = $row['id'];
+                            if($guestId == $_COOKIE['id']){
+                                $profileLocation = "<a href='profil.php?id=" . $_COOKIE['id'] . "'>";
+                            }
+                            else{
+                                $profileLocation = "<a href='guestProfile.php?guestId=$guestId'>";
+                            }
+                            echo $profileLocation;
+                            echo "<div class='statusBox'>";
+                                echo "<div class='statusBoxName'>";
+                                echo $row['firstName'] . " " . $row['lastName'];
+                                echo "</div>";
+                            echo "</div>";
+                            echo "</a>";
+                        }
+                    }
+                }
+            ?>
 
         
         </div>

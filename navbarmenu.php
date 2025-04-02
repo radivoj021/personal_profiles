@@ -39,7 +39,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Inbox</a>
-
                         </li>
                         <hr>
                         <li class="nav-item">
@@ -53,6 +52,11 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Gallery</a>
+                        </li>
+                        <br>
+                        <br>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="deleteAccount.php">Delete My Account</a>
                         </li>
                         <li class="nav-item">
                             <a id="logOut" class="nav-link active" aria-current="page" href="logout.php">Log Out</a>

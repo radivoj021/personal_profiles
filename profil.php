@@ -1,3 +1,7 @@
+<?php
+    ob_start();
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +19,6 @@
     <div class="container" id="container1">
         <div class="row">
         <?php
-            session_start();
             include 'cookieCheck.php';
 
             /* echo $_SESSION['username'] . " " . $_SESSION['password'];  <--- works */
@@ -43,7 +46,7 @@
             }
 
             // Vezi id kao parametar
-            $stmt->bind_param("i", $id);
+            $stmt->bind_param("i", $id); 
 
             // Izvrši upit
             $stmt->execute();
@@ -59,8 +62,8 @@
 
                 $_SESSION["firstname"] = $firstname;
                 $_SESSION["lastname"] = $lastname;
-                setcookie("firstname", $firstname, time() + (30 * 24 * 60 * 60), "/");
-                setcookie("lastname", $lastname, time() + (30 * 24 * 60 * 60), "/");
+                setcookie("firstname",$firstname,time()+(30*24*60*60),"/");
+                setcookie("lastname",$lastname,time()+(30*24*60*60),"/");
                 ?>
         </div>
 
@@ -70,11 +73,9 @@
                     
                 <?php
                     include 'navbarmenu.php';
-                ?>                
-
+                ?>
             </div>
-        </div>              
-                
+        </div> 
         <?php
             } else {
                 header("Location: logIn.html");
@@ -85,6 +86,60 @@
             $conn->close();
         ?>
     </div>
+
+    <div class="container">
+    <div class="row statusRow">
+                <?php
+                    include 'credentials.php';
+
+                    $conn = new mysqli($host, $username, $password, $database);
+
+
+                    if($conn -> connect_error){
+                        die("Neuspesna konekcija " . $conn -> connect_error);
+                    }
+
+                    $sql = "SELECT * FROM status WHERE id=$id ORDER BY statusId DESC";
+                    $result = $conn->query($sql);
+
+                    if($result -> num_rows > 0){
+                        while($row = $result -> fetch_assoc()){
+
+                            echo "<div class='statusBox'>";
+                                echo "<div class='row nameDate'>";
+                                    echo "<div class='statusBoxName'>";
+                                    echo $row['firstName'] . " " . $row['lastName'];
+                                    echo "</div>";                                 
+
+                                    echo "<div class='statusBoxDate'>";
+                                    echo $row['statusDate'];
+                                    echo "</div>";
+                                echo "</div>";
+
+                                echo "<div class='textActions'>";
+                                    echo "<div class='statusBoxText'>";
+                                    echo $row['statusText'];
+                                    echo "</div>";
+
+                                    echo "<div class='deleteStatus'>";
+                                    echo "<a href='deleteStatus.php'>Delete</a>";
+                                    echo "</div>";
+
+                                    echo "<div class='row likeRow'>";
+                                    echo "<div class='like'>Like</div>";
+                                    echo "</div>";
+                                echo "</div>";    
+                            echo "</div>";
+                        }
+                    }              
+
+                    ?>
+
+        </div>
+    </div>
+    
+
+
 
     <script src="cookie.js"></script> <!-- Uključivanje JavaScript fajla -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    

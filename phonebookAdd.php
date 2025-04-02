@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,17 +13,13 @@
     <link href="media.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <?php
-    
-        session_start();
+    <?php        
         include "cookieCheck.php";
         include "navbarmenu.php";
-        include "credentials.php";
-    
+        include "credentials.php";    
     ?>
     Add user
     <hr>
-
     <br>
     <br>
     <form action="addContact.php">
@@ -34,9 +33,7 @@
         <input type="number" name="phoneNumber">
         <br><br>
         <button type="submit">Add user</button>
-    </form>
-
-    
+    </form>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    
     <script src="main.js"></script>
 </body>

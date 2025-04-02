@@ -43,11 +43,11 @@
 
 #nameTitle{
     color: rgb(14, 0, 95);
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
+    width: 50%;
     float: left;
-    WIDTH: 100%;
 }
 
 #container1{
@@ -71,7 +71,7 @@
 
 #leftColumn{
     background-color:#D8D8D8;
-    height: 1000px;
+    margin-bottom: -25px;
 }
 
 #menu{
@@ -172,12 +172,13 @@
     width: 40%;
     float: left;
 /*     margin-left: 20px; */
-    text-align: center;
+    text-align: left;
     font-weight: bold;
     font-size: 30px;
     color: blue;
     margin: 0 auto;
-    background-color: red;
+    background-color: #fafafa;
+    margin-left: 20px;
 }
 
 #rememberMe{
@@ -244,18 +245,73 @@ box-shadow: -4px 5px 11px -6px rgba(0,0,0,0.75);
     width: 100%;
     padding: 20px;
     margin-top: 3px;
+    overflow: auto;
 }
 
-#statusRow{
+.statusRow{
     margin-top: 25px;
 }
 
 .statusBoxName{
-    font-size: 15px;
+    font-size: 20px;
     color: blue;
     font-weight: 600;
+    float: left;
+    width: 45%;
+    margin-left: 20px;
+}
+
+.statusBoxDate{
+    font-size: 15px;
+    color: gray;
+    float: right;
+    width: 50%;
+    text-align: right;
 }
 
 .statusBoxText{
-    overflow: none;
+    overflow-wrap:normal;
+    float: left;
+    font-size: 20px;
+    margin-top: 10px;
+    width: 80%;
+    word-wrap: break-word;
+    margin-left: 20px;
+}
+
+
+
+.deleteStatus{
+    color: blue;
+    float: right;
+    margin-top: 50px;
+}
+
+#warning{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+#profileBody{
+    background-color: #FAFAFA;
+    margin-top: 3px;
+    padding: 10px;
+}
+
+#messageBtn{
+    border: 1px solid gray;
+}
+
+.nameDate{
+    color: red;
+}
+
+.likeRow{
+    width: 90%;
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+    text-align: left;
+    color: rgb(4, 74, 97);
 }

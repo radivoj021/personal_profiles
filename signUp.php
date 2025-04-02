@@ -1,60 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 <?php
-    
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-    include 'credentials.php';
+include 'credentials.php';
 
-    $conn = new mysqli($host, $username, $password, $database);
+$conn = new mysqli($host, $username, $password, $database);
 
-    if($conn->connect_error){
-        die("greska pri ucitavanju konekcije" . $conn->connect_error);
-    }
+if ($conn->connect_error) {
+    die("Greška pri konekciji: " . $conn->connect_error);
+}
 
- 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $firstname = $_POST['firstname'] ?? '';
+    $lastname = $_POST['lastname'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $username = $_POST['username'] ?? '';
+    $pwd = $_POST['password'] ?? '';
 
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
-    $username = $_POST['username'];
-    $pwd = $_POST['password'];
-
-     //ako su input polja za login prazna, vraca nazad na login stranicu
-     if (empty($firstname) || empty($lastname) || empty($email)  || empty($username) || empty($pwd)) {
-        header("Location: index.html");
+    if (empty($firstname) || empty($lastname) || empty($email) || empty($username) || empty($pwd)) {
+        header("Location: signUp.php");
         exit();
     }
 
-    $sql = "INSERT INTO users (firstname, lastname, username, pwd) VALUES ('$firstname', '$lastname', '$username', '$pwd')";
+    /* $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT); */
 
-
-
+    $sql = "INSERT INTO users (firstname, lastname, email, username, pwd) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssss", $firstname, $lastname, $username, $pwd);
 
     if ($stmt === false) {
-        die("Greška u pripremi upita: " . $veza->error);
+        die("Greška u pripremi upita: " . $conn->error);
     }
 
-    if($stmt->execute()){
-        $last_id = $conn->insert_id;
-        header("Location: logIn.html");
-        exit();
-    }
-    else{
-        echo "Greska pri unosu. " . $stmt.error;
+    $stmt->bind_param("sssss", $firstname, $lastname, $email, $username, $pwd);
+
+    if ($stmt->execute()) {
+        header("Location:logIn.html");
+    } else {
+        echo "Greška pri unosu: " . $stmt->error;
     }
 
     $stmt->close();
-    $veza->close();
+    $conn->close();
+}
 ?>
-</body>
-</html>

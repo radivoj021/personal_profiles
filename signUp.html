@@ -10,47 +10,56 @@
     <link href="media.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-
-
     <div class="container">
         <div class="row">
             <div id="title">TimeTable</div>
         </div>
         <div class="row">
             <div id="registerField" class="box1">
-                <form id="registerForm" name="registerF" action="signUp.php" method="POST">
+                <form id="registerForm" action="signUp.php" method="POST">
                     <span>First Name:</span><br>
                     <input class="inputStyle" id="fname" type="text" name="firstname">
-                    <br>
-                    <br>
+                    <br><br>
+                    
                     <span>Last Name:</span><br>
                     <input class="inputStyle" id="lname" type="text" name="lastname"> 
-                    <br>
-                    <br>
+                    <br><br>
+                    
                     <span>Email</span><br>
                     <input class="inputStyle" id="email" type="text" name="email"> 
-                    <br>
-                    <br>     
+                    <br><br>
+                    
                     <span>Username:</span><br>
                     <input class="inputStyle" id="uname" type="text" name="username">
-                    <br>
-                    <br>
+                    <br><br>
+                    
                     <span>Password:</span><br>
                     <input class="inputStyle" id="pwd" type="password" name="password">
-                    <br>
-                    <br>
-                    <button onclick="checkInputs()" type="submit" class="btnStyle" id="btn">Sign Up</button>
-                    <br>
-                    <br>
+                    <br><br>
+                    
+                    <button type="submit" class="btnStyle" id="btn" onclick="return checkInputs()">Sign Up</button>
+                    <br><br>
                 </form>
                 <span id="loginInfo">If you are allready user, please <a class="bold" href="logIn.html">Log in</a>.</span>
             </div>
         </div>
     </div>
 
-
- 
-
+    <script>
+          function checkInputs() {
+            var firstname = document.getElementById('fname').value;
+            var lastname = document.getElementById('lname').value;
+            var email = document.getElementById('email').value;
+            var username = document.getElementById('uname').value;
+            var password = document.getElementById('pwd').value;
+        
+            if (firstname === '' || lastname === '' || email === '' || username === '' || password === '') {
+                alert('Molimo vas da popunite sva polja.');
+                return false; // Sprečava slanje forme
+            }
+            return true;
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -156,6 +156,10 @@
     width: 100%;
 }
 
+#statusBoxDate{
+    width: 40%;
+}
+
 }
 
 @media (min-width: 576px) {
@@ -205,6 +209,20 @@
         margin-top: 800px;
         margin-right: 40px;
     }
+
+    .statusBoxName{
+        width: 45%;
+        float: left;
+    }
+
+    .statusBoxDate{
+        width: 45%;
+        float: right;
+    }
+
+    .textActions{
+        height: 20px;
+    }
 }
 
 /* // Medium devices (tablets, 768px and up) */
@@ -223,10 +241,21 @@
         width: 30%;
     }
 
+    #name_date{
+        background-color: rgb(184, 1, 32);
+    }
 }
 
 /* // X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+    #name_date{
+        background-color: rgb(184, 1, 32);
+    }
+}
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {}
+@media (min-width: 1400px) {
+    #name_date{
+        background-color: rgb(184, 1, 32);
+    }
+}

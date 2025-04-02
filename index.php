@@ -1,3 +1,11 @@
+<?php
+    ob_start();
+    session_start();
+    $id = $_COOKIE['id'];
+    if(isset($_COOKIE['username'])){
+        header("Location: homepage.php?id=$id");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,9 +20,7 @@
 <body id="mainBody">
 
 <?php
-
-        session_start();
-        include 'cookie.php';
+        
 
       /*   if(isset($_COOKIE["username"])) {
             echo "Korisničko ime iz cookie-ja: " . $_COOKIE["username"];
@@ -31,13 +37,15 @@
 
 
 ?>
-
-
     <div id="welcomeTitle">
         TimeTable
     </div>
     <div id="welcomeTitleSmall">
         Organize your time. Save more for tomorrow.
+    </div>
+    <h3 id="warning">(DEMO VERSION - for testing ONLY)</h3>
+    <div>
+        
     </div>
     <div id="welcomeText">
         Welcome to TimeTable, your all-in-one platform for organizing your daily activities! Here, you'll find a personal journal to keep track of important tasks and events. Our phonebook feature helps you manage and store all your essential contacts in one place. Explore the gallery to view and share memorable moments with friends and family. With a variety of other useful tools, TimeTable is designed to simplify and enrich your day-to-day life!
@@ -49,7 +57,6 @@
         <form id="signupForm" action="signUp.html">
             <button class="welcomeButtons">Sign up</button>
         </form>
-        
     </div>
 </body>
 </html>

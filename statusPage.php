@@ -1,3 +1,7 @@
+<?php
+    ob_start();
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,9 +16,6 @@
 </head>
 <body>
     <?php
-        session_start();
-        echo $_SESSION['username'];
-
         include "cookieCheck.php";
         $id = $_GET['id'];
     ?>
@@ -23,11 +24,7 @@
         <i id="statusBack" class="fa-solid fa-arrow-left back"></i>
         <br>
         <br>
-        <h2>Type your text here...</h2>
-
-        
-                    
-        
+        <h2>Type your text here...</h2>        
         <br>
         <form action="insertStatus.php" method="POST">
             <textarea type="text" id="status" name="statusText"></textarea>
@@ -43,10 +40,7 @@
                 })
             </script> -->
         </form>        
-    
-        
     </div>
-
     <script>
         let goBack = document.getElementById("statusBack");
 
@@ -54,7 +48,6 @@
             window.history.back();
         });
     </script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    
     <script src="main.js"></script>
 </body>

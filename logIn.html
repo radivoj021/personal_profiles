@@ -16,7 +16,7 @@
         </div>
         <div id="row">
             <div id="loginField" class="box1">
-                <form id="myForm" action="logIn.php" method="GET">
+                <form id="myForm" action="logIn.php" method="POST">
                     <span>Username:</span>
                     <br>
                     <input id="username" class="inputStyle" type="text" name="username">
@@ -33,20 +33,16 @@
                     <br>
                     <a href="forgotPassword.php">forgot password?</a>        
                     <br>
-                    <br>
-            
+                    <br>            
                     <button id="btnLogIn" type="submit" class="btnStyle">Log In</button>
                     <br>
-                    <br>
-            
+                    <br>            
                     <span>If you are not registered, please <a class="bold" href="signUp.html">Sign Up</a></span>
-
                 </form>            
             </div>
         </div>
     </div>
-
-<!--     <script>
+    <!--     <script>
         document.querySelector("button").addEventListener("click", function(){
             let inputs = document.getElementsByTagName("input");
             let shouldReload = false;

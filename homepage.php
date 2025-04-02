@@ -1,48 +1,40 @@
+<?php
+    ob_start();
+    session_start();
+    include "cookieCheck.php";
+    /* include 'cookieCheck.php'; */
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="main.css" rel="stylesheet" type="text/css">
     <link href="media.css" type="text/css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-
 </head>
 <body class="bodyGray">
         <?php
 
-            session_start();
-            include 'cookieCheck.php';
-
-            if (!isset($_SESSION['firstname'])) {
+            /* if (!isset($_SESSION['firstname'])) {
                 echo "Sesija 'firstname' nije postavljena.";
-            }
-
-            
-
+            } */
+           if(!isset($_COOKIE['firstname'])){
+            echo "Cookie firstname nije postavljen";
+           }
             /* include 'cookieCheck.php'; */
-            
-
             // Preuzimanje id parametra iz URL-a
             $id = $_GET['id'];
-
             // Učitaj podatke za konekciju
             include 'credentials.php';
-
             // Kreiranje konekcije
             $conn = new mysqli($host, $username, $password, $database);
-
             // Provera konekcije
             if ($conn->connect_error) {
                 die("Greška pri učitavanju konekcije: " . $conn->connect_error);
             }
-
             // Pripremanje SQL upita sa placeholder-om za id
             $sql = "SELECT username, pwd FROM users WHERE id = ?";
 
@@ -121,9 +113,8 @@
             
         </div>
 
-        <div class="row" id="statusRow">
+        <div class="row statusRow">
                 <?php
-
                     include 'credentials.php';
 
                     $conn = new mysqli($host, $username, $password, $database);
@@ -140,23 +131,25 @@
                         while($row = $result -> fetch_assoc()){
 
                             echo "<div class='statusBox'>";
-                                echo "<div class='statusBoxName'>";
-                                echo $row['firstName'] . " " . $row['lastName'];
+                                echo "<div class='row nameDate'>";
+                                    echo "<div class='statusBoxName'>";
+                                    echo $row['firstName'] . " " . $row['lastName'];
+                                    echo "</div>";                                 
+
+                                    echo "<div class='statusBoxDate'>";
+                                    echo $row['statusDate'];
+                                    echo "</div>";
                                 echo "</div>";
-                                echo "<div class='statusBoxDate'>";
-                                echo $row['statusDate'];
+
+                                echo "<div class='textActions'>";
+                                    echo "<div class='statusBoxText'>";
+                                    echo $row['statusText'];
+                                    echo "</div>";
                                 echo "</div>";
-                                echo "<div class='statusBoxText'>";
-                                echo $row['statusText'];
+                                echo "<div class='row likeRow'>";
+                                    echo "<div class='like'>Like</div>";
                                 echo "</div>";
                             echo "</div>";
-
-
-
-                        /*  echo "<div class='statusBox'>";
-                            echo
-                            echo $row['firstName'] . " " . $row['lastName'] . " " . $row['statusText'];
-                            echo "</div>"; */
                         }
                     }              
 
