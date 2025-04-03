@@ -13,7 +13,7 @@ setcookie('lastname', $_SESSION['lastname'], time() + (30 * 24 * 60 * 60), "/");
 $id = $_COOKIE['id'];
 $fname = $_COOKIE['firstname'];
 $lname = $_COOKIE['lastname'];
-$date = date("j F Y | H:i:s");
+$date = date("j F Y");
 
 // Provera da li su podaci iz sesije i POST-a dostupni
 if (isset($_SESSION["id"]) && isset($_POST['statusText'])) {

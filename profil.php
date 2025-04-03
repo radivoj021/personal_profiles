@@ -70,7 +70,10 @@
         <div class="row">
             <div class="" id="leftColumn">
                 <div id="nameTitle"><?php echo $firstname . " " . $lastname;?></div>
-                    
+                
+                <div id="homePageIcon"><a href="homepage.php?id=<?php echo $id?>"><i class="fa-solid fa-house"></i></a></div>
+                
+
                 <?php
                     include 'navbarmenu.php';
                 ?>

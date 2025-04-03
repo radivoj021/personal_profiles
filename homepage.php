@@ -93,25 +93,35 @@
                         window.location.href = "search.php?id=<?php echo $id ?>";
                     })
                 </script>
-            </div>
-            <div>    
-                <form action="">
-                    <input type="text" id="addStatusText" placeholder="Add your status here...">
-                    <script>
-                        let status = document.getElementById('addStatusText');
-                        
 
-                        status.addEventListener("click", function(){
-                            window.location.href = "statusPage.php?id=<?php echo $id ?>";
-                        })
-
-
-                    </script>
-                </form>
-
-            </div>
-            
+                
+            </div>            
         </div>
+
+        
+        <div class="row">
+            <div id="myProfileLink">
+                <a href="profil.php?id=<?php echo $id?>">My account</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <form action="">
+                <input type="text" id="addStatusText" placeholder="Add your status here...">
+                <script>
+                    let status = document.getElementById('addStatusText');
+                    
+
+                    status.addEventListener("click", function(){
+                        window.location.href = "statusPage.php?id=<?php echo $id ?>";
+                    })
+
+
+                </script>
+            </form>
+        </div>
+
+
 
         <div class="row statusRow">
                 <?php
